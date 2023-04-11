@@ -7,7 +7,7 @@
   
   gcc server.c -o server
 
-**create a zero file **
+**create a zero file**
 
   dd if=/dev/zero of=file_to_send
 
