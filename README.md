@@ -16,7 +16,7 @@
  ./server
  ./client
  
- **execute the perf analysis at thi time**
+ **execute the perf analysis at this time**
  
 **Note**
 
