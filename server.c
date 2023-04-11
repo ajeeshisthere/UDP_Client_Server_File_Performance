@@ -13,6 +13,7 @@ int main(int argc, char const *argv[]) {
     char buffer[BUF_SIZE];
     struct sockaddr_in server_address, client_address;
     int client_address_len = sizeof(client_address);
+    sleep(20);
 
     // Create socket
     if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) == 0) {
@@ -54,4 +55,3 @@ int main(int argc, char const *argv[]) {
 
     return 0;
 }
-
