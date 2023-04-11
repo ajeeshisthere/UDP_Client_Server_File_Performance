@@ -4,7 +4,7 @@
 #include <netinet/in.h>
 #include <string.h>
 
-#define PORT 8080
+#define PORT 8765
 #define BUF_SIZE 1024
 #define FILE_PATH "file_to_send"
 
