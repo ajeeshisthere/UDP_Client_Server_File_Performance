@@ -1,4 +1,4 @@
-# UDP_Client_Server_File_Perofrmance
+# UDP_Client_Server_File_Performance
 
 
 **Compile the code**
