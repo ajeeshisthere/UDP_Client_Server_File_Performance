@@ -37,7 +37,7 @@ int main(int argc, char const *argv[]) {
     }
 
     // Send file 1000 times
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 1000; i++) {
         printf("Sending file, iteration %d\n", i+1);
         fseek(fp, 0, SEEK_SET);  // reset file pointer
         while (!feof(fp)) {
