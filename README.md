@@ -13,7 +13,8 @@
 
 **Run the binary**
 
- ./server
+ ./server&
+ 
  ./client
  
  **execute the perf analysis at this time**
