@@ -35,6 +35,15 @@ First run the server binary in the background, and copy the PID
  ```
  trace-cmd report > report.txt
  ```
+**Execute with dedicated CPU**
+```
+taskset -c 21 ./server &
+#trace only __x64_sys_recvfrom() function
+trace-cmd record -P $(pidof ./server) -p function_graph --max-graph-depth 1 -l __x64_sys_recvfrom &
+taskset -c 45 ./client
+trace-cmd report > report.txt
+
+```
 
 **Note**
 
