@@ -22,7 +22,7 @@ First run the server binary in the background, and copy the PID
  Server program have a 20 second sleep before starting any network related system calls.
  before that start the ``trace-cmd`` with the PID of server process.
  ```
- trace-cmd record -P <PID of server> -p function_graph
+ trace-cmd record -P $(pidof ./server) -p function_graph
  ```
  In another console run the client binary after 20 seconds completed.
 
