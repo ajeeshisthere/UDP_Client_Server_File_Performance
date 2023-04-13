@@ -30,6 +30,7 @@ int main(int argc, char const *argv[]) {
         perror("bind failed");
         exit(EXIT_FAILURE);
     }
+    printf("Start listening in socket\n");
 
     while (1) {
         // Receive file from client
