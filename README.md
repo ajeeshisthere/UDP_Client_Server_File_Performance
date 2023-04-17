@@ -35,14 +35,27 @@ First run the server binary in the background, and copy the PID
  ```
  trace-cmd report > report.txt
  ```
-**Execute with dedicated CPU**
+**Evaluate recvfrom() function performance with dedicated CPU**
 ```
 taskset -c 21 ./server &
 #trace only __x64_sys_recvfrom() function
 trace-cmd record -P $(pidof ./server) -p function_graph --max-graph-depth 1 -l __x64_sys_recvfrom &
 taskset -c 45 ./client
 trace-cmd report > report.txt
+#create a csv report with time and duration
+cat report.txt | awk '{print $3, $5}'| sed -e 's/\:/,/' > __x64_sys_recvfrom.csv
+```
 
+
+**Evaluate sendto() function performance with dedicated CPU**
+```
+taskset -c 21 ./server &
+taskset -c 45 ./client&
+#trace only __x64_sys_sendto() function
+trace-cmd record -P $(pidof ./client) -p function_graph --max-graph-depth 1 -l  __x64_sys_sendto
+trace-cmd report > report.txt
+#create a csv report with time and duration
+cat report.txt | awk '{print $3, $5}'| sed -e 's/\:/,/' > __x64_sys_sendto.csv
 ```
 
 **Note**
