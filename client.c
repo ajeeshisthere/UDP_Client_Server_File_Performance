@@ -14,6 +14,7 @@ int main(int argc, char const *argv[]) {
     int sockfd;
     char buffer[BUF_SIZE];
     struct sockaddr_in server_address;
+    sleep(10);
 
     // Create socket
     if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) == 0) {
